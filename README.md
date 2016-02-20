@@ -9,5 +9,5 @@ Clojure - web scraper and indexer (soon)
 
 ## Running development mode
 
-Run webpack in dev mode for serving statics assets from the server: `babel-node webpack.development.js`
-Run server in dev mode: `NODE_ENV=development babel-node index.js`
+ - Run webpack in dev mode for serving statics assets from the server: `babel-node webpack.development.js`
+ - Run server in dev mode: `NODE_ENV=development babel-node index.js`
