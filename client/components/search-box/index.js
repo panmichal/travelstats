@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import TextField from 'material-ui/lib/text-field';
+import SearchForm from 'components/search-form';
 import RaisedButton from 'material-ui/lib/raised-button';
 import Card from 'material-ui/lib/card/card';
 import CardActions from 'material-ui/lib/card/card-actions';
@@ -12,9 +12,7 @@ class SearchBox extends Component {
     return <div id="search-box">
      <Card>
      <CardTitle title="Search for places"/>
-      <div id="search-input"><TextField hintText='Place name'/>
-        <div id="search-button"><RaisedButton label="Search" primary={true}/></div>
-      </div>
+      <SearchForm />
       </Card>
     </div>;
   };
