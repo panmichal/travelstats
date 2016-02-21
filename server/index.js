@@ -5,7 +5,9 @@ import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
+import axios from 'axios';
 import App from './generated/app';
+import config from './config/config';
 
 const app = express();
 
@@ -40,7 +42,22 @@ app.get('/', (request, response) => {
 });
 
 app.get('/autocomplete', (request, response) => {
-  response.json(['Poznan, Poland', 'Mexico City, Mexico', 'Kiev, Ukraine']);
+  const a = axios.create({
+    baseURL: 'https://maps.googleapis.com/maps/api/place/autocomplete'
+  });
+  a.get('/json', {
+    params: {
+      input: request.query.input,
+      key: config.googleApiKey
+    }
+  })
+  .then((res) => {
+    response.json(res.data.predictions.map((p) => p.description));
+  })
+  .catch(() => {
+    response.json([]);
+  })
+
 });
 
 export default app;

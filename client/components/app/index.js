@@ -24,7 +24,7 @@ class App extends Component {
       title="Travel Stats"
         iconClassNameRight="muidocs-icon-navigation-expand-more"
       />
-       <SearchBox autocompleteData={this.props.searchAutocomplete} onSearchUpdate={this.props.updateSearchAutocomplete}/>
+       <SearchBox autocompleteData={this.props.searchAutocomplete} onSearchUpdate={this.props.fetchAutocompleteResults}/>
       </div>
     </MuiThemeProvider>;
   }
