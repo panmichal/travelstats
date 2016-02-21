@@ -4,6 +4,9 @@ import {deepOrange500} from 'material-ui/lib/styles/colors';
 import MuiThemeProvider from 'material-ui/lib/MuiThemeProvider';
 import AppBar from 'material-ui/lib/app-bar';
 import SearchBox from 'components/search-box';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as searchActionCreators from 'actions/search-actions';
 import {} from './style.less';
 
 const muiTheme = getMuiTheme({
@@ -21,10 +24,21 @@ class App extends Component {
       title="Travel Stats"
         iconClassNameRight="muidocs-icon-navigation-expand-more"
       />
-       <SearchBox />
+       <SearchBox autocompleteData={this.props.searchAutocomplete} onSearchUpdate={this.props.updateSearchAutocomplete}/>
       </div>
     </MuiThemeProvider>;
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    searchAutocomplete: state.searchAutocomplete,
+    searchResults: state.searchResults
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(searchActionCreators, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

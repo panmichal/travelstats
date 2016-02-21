@@ -12,7 +12,7 @@ class SearchBox extends Component {
     return <div id="search-box">
      <Card>
      <CardTitle title="Search for places"/>
-      <SearchForm />
+      <SearchForm dataSource={this.props.autocompleteData} onUpdate={this.props.onSearchUpdate}/>
       </Card>
     </div>;
   };
