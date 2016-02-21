@@ -39,4 +39,8 @@ app.get('/', (request, response) => {
   });
 });
 
+app.get('/autocomplete', (request, response) => {
+  response.json(['Poznan, Poland', 'Mexico City, Mexico', 'Kiev, Ukraine']);
+});
+
 export default app;
