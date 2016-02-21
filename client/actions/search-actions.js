@@ -8,7 +8,6 @@ export function fetchAutocompleteResults(input) {
       return fetch("/autocomplete/?input=" + input)
       .then((res) => res.json())
       .then((autocomplete) => {
-        console.log(autocomplete);
         dispatch(showAutocompleteResults(autocomplete));
       });
   }
