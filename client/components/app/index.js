@@ -14,7 +14,7 @@ const muiTheme = getMuiTheme({
   palette: {
     accent1Color: deepOrange500,
   },
-});
+}, { userAgent: 'all' });
 
 
 class App extends Component {
@@ -25,7 +25,10 @@ class App extends Component {
           title="Travel Stats"
           iconClassNameRight="muidocs-icon-navigation-expand-more"
           />
-          <SearchBox autocompleteData={this.props.searchAutocomplete} onSearchUpdate={this.props.fetchAutocompleteResults}/>
+        <SearchBox
+          autocompleteData={this.props.searchAutocomplete}
+          onSearchSubmit={this.props.search}
+          onSearchUpdate={this.props.fetchAutocompleteResults}/>
           <SearchResults results={this.props.searchResults}/>
       </div>
     </MuiThemeProvider>;

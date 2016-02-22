@@ -11,7 +11,10 @@ class SearchBox extends Component {
   render() {
     return <div id="search-box">
      <Paper zDepth={2}>
-        <SearchForm dataSource={this.props.autocompleteData} onUpdate={this.props.onSearchUpdate}/>
+        <SearchForm
+          dataSource={this.props.autocompleteData}
+          onUpdate={this.props.onSearchUpdate}
+          onSubmit={this.props.onSearchSubmit}/>
       </Paper>
     </div>;
   };

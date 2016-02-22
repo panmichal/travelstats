@@ -14,7 +14,7 @@ class SearchForm extends Component {
           onUpdateInput={this.props.onUpdate}
         />
         <div id="search-button">
-          <RaisedButton label="Search" primary={true}/>
+          <RaisedButton label="Search" primary={true} onClick={this.props.onSubmit}/>
         </div>
       </div>
   };
