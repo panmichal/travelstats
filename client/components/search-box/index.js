@@ -11,7 +11,7 @@ class SearchBox extends Component {
   render() {
     return <div id="search-box">
      <Card>
-     <CardTitle title="Search for places"/>
+      <CardTitle title="Search for places"/>
       <SearchForm dataSource={this.props.autocompleteData} onUpdate={this.props.onSearchUpdate}/>
       </Card>
     </div>;

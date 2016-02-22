@@ -26,7 +26,10 @@ app.use(express.static(path.resolve(__dirname, '../dist')));
 app.get('/', (request, response) => {
   const initialState = {
     searchAutocomplete: [],
-    searchResults: []
+    searchResults: [
+      { site: "Thorn tree", body: "Lorem ipsum", id: 1},
+      { site: "Tripadvisor", body: "Nice city", id: 2},
+    ]
   };
   const store = createStore((state=initialState) => state);
   const appContent = ReactDOMServer.renderToString(
@@ -56,8 +59,14 @@ app.get('/autocomplete', (request, response) => {
   })
   .catch(() => {
     response.json([]);
-  })
+  });
+});
 
+app.get('/search', (request, response) => {
+  response.json([
+    { site: "Thorn tree", body: "Lorem ipsum"},
+    { site: "Tripadvisor", body: "Nice city"},
+  ]);
 });
 
 export default app;
