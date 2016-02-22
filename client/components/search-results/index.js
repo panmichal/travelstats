@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Card from 'material-ui/lib/card/card';
+import Paper from 'material-ui/lib/paper';
 import CardTitle from 'material-ui/lib/card/card-title';
 import SearchResult from 'components/search-result';
 
@@ -8,14 +8,12 @@ class SearchResults extends Component {
     super(props);
   };
   render() {
-    return <div id="search-results">
-        <Card>
-          <CardTitle title="Search Results"/>
-          {this.props.results.map(result =>
-            <SearchResult key={result.id} result={result} />
-          )}
-        </Card>
-
+    return <div id="search-results" className="container-fluid">
+          <Paper zDepth={1}>
+            {this.props.results.map(result =>
+              <SearchResult key={result.id} result={result} />
+            )}
+          </Paper>
       </div>
   };
 }
