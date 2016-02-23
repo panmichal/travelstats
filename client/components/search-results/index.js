@@ -13,7 +13,7 @@ class SearchResults extends Component {
     return <div id="search-results" className="container-fluid">
           <List>
             {this.props.results.map(result =>
-              <ListItem><SearchResult key={result.id} result={result} /></ListItem>
+              <ListItem disabled={true}><SearchResult key={result.id} result={result} /></ListItem>
             )}
           </List>
       </div>
