@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <title>React isomorphic</title>
 {{#unless isDevelopment}}
-  <link rel=stylesheet" href="{{assetPath}}bundle.css">
+  <link rel=stylesheet" href="bundle.css">
 {{/unless}}
 </head>
 <body>
   {{{body}}}
-  <script src="{{assetPath}}bundle.js" async></script>
+  <script src="{{#if isDevelopment}}{{assetPath}}{{/if}}bundle.js" async></script>
 </body>
