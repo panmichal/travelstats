@@ -9,7 +9,7 @@ if (process.env.NODE_ENV === 'development') {
   server.locals.isDevelopment = true;
 } else {
   config.port = 3000;
-  config.host = 'localhost';
+  config.host = '0.0.0.0';
   server.locals.assetPath = 'http://localhost:3000/';
   server.locals.isDevelopment = false;
 }
